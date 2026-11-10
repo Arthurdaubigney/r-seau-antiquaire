@@ -20,11 +20,11 @@ export const NAV = [
 
 export const EXPERTISES = [
   { id: 'mobilier', name: 'Mobilier ancien', photo: 'f109622231', line: 'Commodes, secrétaires, sièges, ébénisterie du XVIIᵉ au XIXᵉ siècle.' },
-  { id: 'sculpture', name: 'Sculpture et statuaire', photo: 'f112299758', line: 'Marbres, bronzes, terres cuites, de l’Antiquité aux ateliers du XIXᵉ.' },
+  { id: 'fourrure', name: 'Manteaux de fourrure', photo: 'f38776155', line: 'Manteaux, étoles et manchons anciens : fourrures de couture et pièces d’époque.' },
   { id: 'ceramique', name: 'Céramique et porcelaine', photo: 'f60177225', line: 'Porcelaines, faïences, céladons, manufactures françaises et d’Asie.' },
   { id: 'horlogerie', name: 'Horlogerie et pendules', photo: 'f84517055', line: 'Pendules, cartels, comtoises, mouvements et boîtiers anciens.' },
   { id: 'argenterie', name: 'Argenterie et arts de la table', photo: 'f30935634', line: 'Orfèvrerie, services, métal argenté, verrerie et cristal.' },
   { id: 'livres', name: 'Livres et manuscrits', photo: 'f67001337', line: 'Reliures, éditions anciennes, bibliothèques constituées.' },
   { id: 'bijoux', name: 'Bijoux anciens', photo: 'f154936376', line: 'Joaillerie, émaux, camées, parures de famille.' },
-  { id: 'fourrure', name: 'Manteaux de fourrure', photo: 'f38776155', line: 'Manteaux, étoles et manchons anciens : fourrures de couture et pièces d’époque.' },
+  { id: 'sculpture', name: 'Sculpture et statuaire', photo: 'f112299758', line: 'Marbres, bronzes, terres cuites, de l’Antiquité aux ateliers du XIXᵉ.' },
 ] as const;

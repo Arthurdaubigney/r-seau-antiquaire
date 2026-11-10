@@ -7,8 +7,8 @@ import { EXPERTISES } from '../../config/site';
 const sections = [
   { id: 'mobilier', photos: ['f133826381', 'px3771839'], intro: "Du cabinet Louis XIV à la commode Napoléon III, le mobilier se lit dans ses bois, ses assemblages et ses bronzes. Nos experts distinguent l’époque, l’atelier et les restaurations.",
     items: ['Commodes, secrétaires, bureaux, cabinets', 'Sièges : fauteuils, bergères, chaises', 'Bronzes d’ameublement, marqueterie, vernis', 'Ensembles de salon et de salle à manger'] },
-  { id: 'sculpture', photos: ['f112299758', 'px11488549'], intro: "Marbres antiques, bronzes d’édition, terres cuites : l’expert regarde la matière, la patine et la facture avant de se prononcer sur l’attribution.",
-    items: ['Marbres et pierres sculptées', 'Bronzes, fontes d’édition, patines', 'Terres cuites et plâtres d’atelier', 'Statuaire de jardin et décors architecturaux'] },
+  { id: 'fourrure', photos: ['f38776155'], intro: "Vison, astrakan, loutre, renard : l’expert juge la peau, la coupe, la doublure et la griffe. Il vérifie aussi l’origine de la pièce et la réglementation qui s’applique à la vente de certaines espèces.",
+    items: ['Manteaux, étoles, manchons et cols anciens', 'Fourrures de couture et pièces de maisons réputées', 'Doublures, étiquettes, griffes et monogrammes', 'État des peaux, restauration et conservation'] },
   { id: 'ceramique', photos: ['f60177225'], intro: "Porcelaine tendre, faïence fine, céladon : les marques, les pâtes et les décors permettent de remonter jusqu’à la manufacture et à la période.",
     items: ['Porcelaines françaises et européennes', 'Faïences régionales', 'Céramiques d’Asie : céladons, bleu et blanc', 'Vases, garnitures de cheminée, services'] },
   { id: 'horlogerie', photos: ['f84517055'], intro: "Un mouvement signé, un cadran émaillé, un cabinet sculpté : l’horlogerie demande d’examiner la mécanique autant que le décor.",
@@ -19,8 +19,8 @@ const sections = [
     items: ['Éditions originales et livres illustrés', 'Reliures de cuir et reliures d’éditeur', 'Manuscrits, correspondances, documents', 'Bibliothèques entières, inventaire et prisée'] },
   { id: 'bijoux', photos: ['f154936376'], intro: "Or, émaux, pierres de couleur : le joaillier identifie les matières, date la monture et reconnaît les travaux d’atelier.",
     items: ['Bagues, bracelets, broches, pendentifs', 'Joaillerie ancienne et bijoux d’époque', 'Camées, intailles, émaux', 'Parures de famille et successions'] },
-  { id: 'fourrure', photos: ['f38776155'], intro: "Vison, astrakan, loutre, renard : l’expert juge la peau, la coupe, la doublure et la griffe. Il vérifie aussi l’origine de la pièce et la réglementation qui s’applique à la vente de certaines espèces.",
-    items: ['Manteaux, étoles, manchons et cols anciens', 'Fourrures de couture et pièces de maisons réputées', 'Doublures, étiquettes, griffes et monogrammes', 'État des peaux, restauration et conservation'] },
+  { id: 'sculpture', photos: ['f112299758', 'px11488549'], intro: "Marbres antiques, bronzes d’édition, terres cuites : l’expert regarde la matière, la patine et la facture avant de se prononcer sur l’attribution.",
+    items: ['Marbres et pierres sculptées', 'Bronzes, fontes d’édition, patines', 'Terres cuites et plâtres d’atelier', 'Statuaire de jardin et décors architecturaux'] },
 ];
 const byId = Object.fromEntries(EXPERTISES.map((e) => [e.id, e]));
 ---
