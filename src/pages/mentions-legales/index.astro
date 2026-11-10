@@ -23,7 +23,7 @@ import credits from '../../data/credits.json';
         <h2>Données personnelles</h2>
         <p>Les informations transmises par le formulaire de contact (réalisé avec Tally) servent uniquement à traiter votre demande. Vous pouvez demander leur consultation ou leur suppression en écrivant au Réseau par ce même formulaire.</p>
         <h2 id="credits">Crédits photographiques</h2>
-        <p>Les photographies du site proviennent de Wikimedia Commons, sous licences libres (CC0, CC BY, CC BY-SA). Elles seront remplacées par les photographies des maisons du réseau.</p>
+        <p>Les photographies du site proviennent de Pexels (licence Pexels, usage commercial libre) et de Wikimedia Commons (licences CC0, CC BY, CC BY-SA). Elles seront remplacées par les photographies des maisons du réseau.</p>
         <ul class="credits-list">
           {credits.map((c) => <li><a class="link" href={c.page} rel="noopener">{c.by}</a> — {c.licence}</li>)}
         </ul>

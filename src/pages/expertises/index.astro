@@ -5,19 +5,19 @@ import Cta from '../../components/Cta.astro';
 import { EXPERTISES } from '../../config/site';
 
 const sections = [
-  { id: 'mobilier', photos: ['f133826381', 'f30090125'], intro: "Du cabinet Louis XIV à la commode Napoléon III, le mobilier se lit dans ses bois, ses assemblages et ses bronzes. Nos experts distinguent l’époque, l’atelier et les restaurations.",
+  { id: 'mobilier', photos: ['f133826381', 'px3771839'], intro: "Du cabinet Louis XIV à la commode Napoléon III, le mobilier se lit dans ses bois, ses assemblages et ses bronzes. Nos experts distinguent l’époque, l’atelier et les restaurations.",
     items: ['Commodes, secrétaires, bureaux, cabinets', 'Sièges : fauteuils, bergères, chaises', 'Bronzes d’ameublement, marqueterie, vernis', 'Ensembles de salon et de salle à manger'] },
-  { id: 'sculpture', photos: ['f112299758', 'f63980294'], intro: "Marbres antiques, bronzes d’édition, terres cuites : l’expert regarde la matière, la patine et la facture avant de se prononcer sur l’attribution.",
+  { id: 'sculpture', photos: ['f112299758', 'px11488549'], intro: "Marbres antiques, bronzes d’édition, terres cuites : l’expert regarde la matière, la patine et la facture avant de se prononcer sur l’attribution.",
     items: ['Marbres et pierres sculptées', 'Bronzes, fontes d’édition, patines', 'Terres cuites et plâtres d’atelier', 'Statuaire de jardin et décors architecturaux'] },
-  { id: 'ceramique', photos: ['f60177225', 'f76021423'], intro: "Porcelaine tendre, faïence fine, céladon : les marques, les pâtes et les décors permettent de remonter jusqu’à la manufacture et à la période.",
+  { id: 'ceramique', photos: ['f60177225', 'px21044845'], intro: "Porcelaine tendre, faïence fine, céladon : les marques, les pâtes et les décors permettent de remonter jusqu’à la manufacture et à la période.",
     items: ['Porcelaines françaises et européennes', 'Faïences régionales', 'Céramiques d’Asie : céladons, bleu et blanc', 'Vases, garnitures de cheminée, services'] },
-  { id: 'horlogerie', photos: ['f84517055', 'f3229930'], intro: "Un mouvement signé, un cadran émaillé, un cabinet sculpté : l’horlogerie demande d’examiner la mécanique autant que le décor.",
+  { id: 'horlogerie', photos: ['f84517055', 'px4975640'], intro: "Un mouvement signé, un cadran émaillé, un cabinet sculpté : l’horlogerie demande d’examiner la mécanique autant que le décor.",
     items: ['Pendules de cheminée et de table', 'Cartels et horloges comtoises', 'Montres de gousset et pendulettes', 'Mouvements, échappements, signatures'] },
   { id: 'argenterie', photos: ['f30935634'], intro: "Poinçons, titres, orfèvres : l’argenterie se vérifie au poinçon. Les services en porcelaine et en métal argenté demandent la même attention.",
     items: ['Orfèvrerie en argent massif', 'Métal argenté, couverts, plateaux', 'Services à thé et à café', 'Verrerie, cristal, arts de la table'] },
-  { id: 'livres', photos: ['f67001337', 'f51846334'], intro: "Reliures, éditions originales, bibliothèques de famille : le libraire ancien regarde l’état, la complétude et la provenance de chaque volume.",
+  { id: 'livres', photos: ['f67001337', 'px10855986'], intro: "Reliures, éditions originales, bibliothèques de famille : le libraire ancien regarde l’état, la complétude et la provenance de chaque volume.",
     items: ['Éditions originales et livres illustrés', 'Reliures de cuir et reliures d’éditeur', 'Manuscrits, correspondances, documents', 'Bibliothèques entières, inventaire et prisée'] },
-  { id: 'bijoux', photos: ['f154936376', 'f154523680'], intro: "Or, émaux, pierres de couleur : le joaillier identifie les matières, date la monture et reconnaît les travaux d’atelier.",
+  { id: 'bijoux', photos: ['f154936376', 'px14156576'], intro: "Or, émaux, pierres de couleur : le joaillier identifie les matières, date la monture et reconnaît les travaux d’atelier.",
     items: ['Bagues, bracelets, broches, pendentifs', 'Joaillerie ancienne et bijoux d’époque', 'Camées, intailles, émaux', 'Parures de famille et successions'] },
 ];
 const byId = Object.fromEntries(EXPERTISES.map((e) => [e.id, e]));
@@ -51,7 +51,7 @@ const byId = Object.fromEntries(EXPERTISES.map((e) => [e.id, e]));
               <ul class="ticks">{s.items.map((it) => <li>{it}</li>)}</ul>
               <div class="actions"><Cta label="Faire expertiser un objet" /></div>
             </div>
-            <div class="duo"><Photo name={a} frame="wide" />{b && <Photo name={b} frame="free" />}</div>
+            {b ? <div class="duo"><Photo name={a} frame="tall" sizes="(min-width: 900px) 25vw, 50vw" /><Photo name={b} frame="tall" sizes="(min-width: 900px) 25vw, 50vw" /></div> : <Photo name={a} frame="tall" />}
           </div>
         </div>
       </section>

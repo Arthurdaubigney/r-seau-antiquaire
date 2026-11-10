@@ -298,5 +298,14 @@ html.js .statement .w.on { opacity: 1; }
 
 a.card:focus-visible { outline-offset: 6px; }
 
-.duo { display: grid; gap: var(--s2); }
-.duo .ph + .ph { aspect-ratio: 16 / 9; }
+
+/* Mosaïque de photographies d'experts */
+.mosaic { display: grid; gap: var(--s2); grid-template-columns: 1fr; }
+@media (min-width: 700px) {
+  .mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; min-height: 560px; }
+  .mosaic .ph { aspect-ratio: auto; height: 100%; min-height: 0; }
+  .mosaic > :first-child { grid-row: span 2; }
+}
+@media (max-width: 699px) { .mosaic .ph { aspect-ratio: 4 / 3; } .mosaic > :first-child { aspect-ratio: 4 / 5; } }
+.duo { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s2); }
+@media (max-width: 520px) { .duo { grid-template-columns: 1fr; } }
