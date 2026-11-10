@@ -29,7 +29,7 @@ export const REGIONS = [
 ] as const;
 
 export const EXPERTISES = [
-  { id: 'mobilier', name: 'Mobilier ancien', photo: 'f133826381', line: 'Commodes, secrétaires, sièges, ébénisterie du XVIIᵉ au XIXᵉ siècle.' },
+  { id: 'mobilier', name: 'Mobilier ancien', photo: 'f109622231', line: 'Commodes, secrétaires, sièges, ébénisterie du XVIIᵉ au XIXᵉ siècle.' },
   { id: 'sculpture', name: 'Sculpture et statuaire', photo: 'f112299758', line: 'Marbres, bronzes, terres cuites, de l’Antiquité aux ateliers du XIXᵉ.' },
   { id: 'ceramique', name: 'Céramique et porcelaine', photo: 'f60177225', line: 'Porcelaines, faïences, céladons, manufactures françaises et d’Asie.' },
   { id: 'horlogerie', name: 'Horlogerie et pendules', photo: 'f84517055', line: 'Pendules, cartels, comtoises, mouvements et boîtiers anciens.' },

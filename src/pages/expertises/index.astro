@@ -27,8 +27,8 @@ const byId = Object.fromEntries(EXPERTISES.map((e) => [e.id, e]));
   description="Les sept domaines d'expertise du Réseau Antiquaires : mobilier ancien, sculpture, céramique, horlogerie, argenterie, livres anciens et bijoux anciens."
   crumbs={[{ name: 'Expertises', path: '/expertises/' }]}
 >
-  <section class="page-hero">
-    <div class="wrap" data-enter>
+  <section class="page-hero" data-enter>
+    <div class="wrap">
       <span class="eyebrow" style="--i:0">Expertises</span>
       <h1 style="--i:1">Sept domaines d’expertise pour objets d’art et mobilier ancien</h1>
       <p class="lede" style="--i:2">Chaque domaine a ses experts. Vous trouvez ci-dessous ce que nous examinons, estimons et achetons.</p>
@@ -42,7 +42,7 @@ const byId = Object.fromEntries(EXPERTISES.map((e) => [e.id, e]));
     return (
       <section id={s.id} class={`section ${i % 2 === 0 ? '' : 'section--surface'}`} aria-labelledby={`h-${s.id}`}>
         <div class="wrap">
-          <div class={`split ${flip ? 'split--reverse' : ''}`}>
+          <div class={`split `}>
             <div class="stack">
               <span class="eyebrow">{String(i + 1).padStart(2, '0')} / 07</span>
               <h2 id={`h-${s.id}`}>{e.name}</h2>
