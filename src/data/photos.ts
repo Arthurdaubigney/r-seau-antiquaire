@@ -39,6 +39,7 @@ const ALT: Record<string, string> = {
   px11488549: "Visiteur en manteau noir devant une sculpture de marbre blanc dans un musée",
   px7518963: "Expert en costume remettant et signant un document avec un client à une table",
   px6334279: "Expert en veste lisant un ouvrage dans une bibliothèque",
+  f38776155: 'Manteau de fourrure ancien à motif tigré, noué d’une ceinture de daim sur un mannequin de boutique',
   f110437015: 'Pendule de cheminée en bois sculpté à cadran doré, sur fond noir',
 };
 

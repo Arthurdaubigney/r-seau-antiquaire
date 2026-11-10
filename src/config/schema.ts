@@ -24,7 +24,7 @@ export const organizationGraph = {
       image: `${SITE.url}/og.jpg`,
       address: { '@type': 'PostalAddress', addressCountry: 'FR' },
       areaServed: { '@type': 'Country', name: 'France' },
-      knowsAbout: ['Mobilier ancien', 'Sculpture', 'Céramique et porcelaine', 'Horlogerie ancienne', 'Argenterie', 'Livres anciens', 'Bijoux anciens'],
+      knowsAbout: ['Mobilier ancien', 'Sculpture', 'Céramique et porcelaine', 'Horlogerie ancienne', 'Argenterie', 'Livres anciens', 'Bijoux anciens', 'Manteaux de fourrure anciens'],
       makesOffer: [
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: "Estimation d'objets d'art et d'antiquités" } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: "Expertise d'objets d'art et de mobilier ancien" } },

@@ -19,18 +19,20 @@ const sections = [
     items: ['Éditions originales et livres illustrés', 'Reliures de cuir et reliures d’éditeur', 'Manuscrits, correspondances, documents', 'Bibliothèques entières, inventaire et prisée'] },
   { id: 'bijoux', photos: ['f154936376'], intro: "Or, émaux, pierres de couleur : le joaillier identifie les matières, date la monture et reconnaît les travaux d’atelier.",
     items: ['Bagues, bracelets, broches, pendentifs', 'Joaillerie ancienne et bijoux d’époque', 'Camées, intailles, émaux', 'Parures de famille et successions'] },
+  { id: 'fourrure', photos: ['f38776155'], intro: "Vison, astrakan, loutre, renard : l’expert juge la peau, la coupe, la doublure et la griffe. Il vérifie aussi l’origine de la pièce et la réglementation qui s’applique à la vente de certaines espèces.",
+    items: ['Manteaux, étoles, manchons et cols anciens', 'Fourrures de couture et pièces de maisons réputées', 'Doublures, étiquettes, griffes et monogrammes', 'État des peaux, restauration et conservation'] },
 ];
 const byId = Object.fromEntries(EXPERTISES.map((e) => [e.id, e]));
 ---
 <Base
   title="Expertises — Mobilier, sculpture, céramique, horlogerie"
-  description="Les sept domaines d'expertise du Réseau Antiquaires : mobilier ancien, sculpture, céramique, horlogerie, argenterie, livres anciens et bijoux anciens."
+  description="Les huit domaines d'expertise du Réseau Antiquaires : mobilier, sculpture, céramique, horlogerie, argenterie, livres, bijoux et fourrures."
   crumbs={[{ name: 'Expertises', path: '/expertises/' }]}
 >
   <section class="page-hero" data-enter>
     <div class="wrap">
       <span class="eyebrow" style="--i:0">Expertises</span>
-      <h1 style="--i:1">Sept domaines d’expertise pour objets d’art et mobilier ancien</h1>
+      <h1 style="--i:1">Huit domaines d’expertise pour objets d’art et mobilier ancien</h1>
       <p class="lede" style="--i:2">Chaque domaine a ses experts. Vous trouvez ci-dessous ce que nous examinons, estimons et achetons.</p>
     </div>
   </section>
@@ -44,7 +46,7 @@ const byId = Object.fromEntries(EXPERTISES.map((e) => [e.id, e]));
         <div class="wrap">
           <div class={`split `}>
             <div class="stack">
-              <span class="eyebrow">{String(i + 1).padStart(2, '0')} / 07</span>
+              <span class="eyebrow">{String(i + 1).padStart(2, '0')} / 08</span>
               <h2 id={`h-${s.id}`}>{e.name}</h2>
               <p class="lede">{s.intro}</p>
               <h3 style="font-size:1.15rem;font-family:var(--font-body);font-weight:600;letter-spacing:0">Ce que nous examinons</h3>

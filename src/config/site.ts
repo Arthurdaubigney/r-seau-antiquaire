@@ -26,4 +26,5 @@ export const EXPERTISES = [
   { id: 'argenterie', name: 'Argenterie et arts de la table', photo: 'f30935634', line: 'Orfèvrerie, services, métal argenté, verrerie et cristal.' },
   { id: 'livres', name: 'Livres et manuscrits', photo: 'f67001337', line: 'Reliures, éditions anciennes, bibliothèques constituées.' },
   { id: 'bijoux', name: 'Bijoux anciens', photo: 'f154936376', line: 'Joaillerie, émaux, camées, parures de famille.' },
+  { id: 'fourrure', name: 'Manteaux de fourrure', photo: 'f38776155', line: 'Manteaux, étoles et manchons anciens : fourrures de couture et pièces d’époque.' },
 ] as const;
