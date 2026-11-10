@@ -318,5 +318,65 @@
   "alt": "Antique Clock",
   "w": 1653,
   "h": 2000
+ },
+ {
+  "key": "f64411700",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Horloger.jpg",
+  "by": "TARIK ESNOW",
+  "licence": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Horloger.jpg",
+  "alt": "Horloger",
+  "w": 3168,
+  "h": 4752
+ },
+ {
+  "key": "f50387677",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Sabine_Kessler_formation_INP%2C_atelier_de_restauration_des_belles_du_Nord%2C_rencontre_avec_wikim%C3%A9diens_PBA_Lille_26_juillet_2016_03.jpg",
+  "by": "Lamiot",
+  "licence": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Sabine_Kessler_formation_INP,_atelier_de_restauration_des_belles_du_Nord,_rencontre_avec_wikim%C3%A9diens_PBA_Lille_26_juillet_2016_03.jpg",
+  "alt": "Sabine Kessler formation INP, atelier de restauration des belles du Nord, rencontre avec wikimédiens PBA Lille 26 juillet 2016 03",
+  "w": 4000,
+  "h": 6000
+ },
+ {
+  "key": "f50387694",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/0/00/Wikim%C3%A9diens_en_visite%2C_atelier_de_restauration_des_belles_du_Nord%2C_PBA_Lille_26_juillet_2016_16.jpg",
+  "by": "Lamiot",
+  "licence": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Wikim%C3%A9diens_en_visite,_atelier_de_restauration_des_belles_du_Nord,_PBA_Lille_26_juillet_2016_16.jpg",
+  "alt": "Wikimédiens en visite, atelier de restauration des belles du Nord, PBA Lille 26 juillet 2016 16",
+  "w": 4273,
+  "h": 2984
+ },
+ {
+  "key": "f78299709",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/7/75/Fran%C3%A7oise_Foliot_-_Paris_-_Orf%C3%A8vre_05.jpg",
+  "by": "Françoise Foliot",
+  "licence": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Fran%C3%A7oise_Foliot_-_Paris_-_Orf%C3%A8vre_05.jpg",
+  "alt": "Françoise Foliot - Paris - Orfèvre 05",
+  "w": 10143,
+  "h": 6723
+ },
+ {
+  "key": "f104486169",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Restauration_de_documents_patrimoniaux_-_Archives_nationales_%28France%29.jpg",
+  "by": "Archives nationales (France)",
+  "licence": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Restauration_de_documents_patrimoniaux_-_Archives_nationales_(France).jpg",
+  "alt": "Restauration de documents patrimoniaux - Archives nationales (France)",
+  "w": 3872,
+  "h": 2592
+ },
+ {
+  "key": "f121913487",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Seattle_Public_Library%2C_Central_Branch_Bindery%2C_1910_-_DPLA_-_ec7b185cbf998e2774d69ea5ef673756.jpg",
+  "by": "Romans Photographic Company",
+  "licence": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Seattle_Public_Library,_Central_Branch_Bindery,_1910_-_DPLA_-_ec7b185cbf998e2774d69ea5ef673756.jpg",
+  "alt": "Seattle Public Library, Central Branch Bindery, 1910",
+  "w": 6706,
+  "h": 5490
  }
 ]

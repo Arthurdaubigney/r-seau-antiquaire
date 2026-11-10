@@ -33,6 +33,12 @@ const ALT: Record<string, string> = {
   f8912320: 'Double porte à décor doré encadrée de marbres dans un salon de château',
   f126775509: 'Chaise de style Louis XV garnie de tissu brodé, dossier cabriolet',
   f30701106: 'Commode anglaise du XVIIIᵉ siècle à riche marqueterie',
+  f50387677: 'Une restauratrice examine une statue de pierre sculptée, dans un atelier lumineux',
+  f50387694: 'Atelier de restauration : des restaurateurs travaillent autour de statues anciennes',
+  f104486169: "Main d'un restaurateur passant un pinceau sur un document ancien à décor gravé",
+  f64411700: 'Horloger âgé penché sur son établi, réparant un mouvement dans sa boutique',
+  f78299709: "Atelier d'orfèvre : établis, outils et lampes dans la lumière d'une fenêtre",
+  f121913487: "Grand atelier de reliure ancien où des relieurs travaillent, photographie d'époque",
   f110437015: 'Pendule de cheminée en bois sculpté à cadran doré, sur fond noir',
 };
 
