@@ -1,0 +1,111 @@
+---
+import Base from '../../layouts/Base.astro';
+import Photo from '../../components/Photo.astro';
+import Cta from '../../components/Cta.astro';
+import Faq from '../../components/Faq.astro';
+import { SITE } from '../../config/site';
+
+const faq = [
+  { q: 'Combien coûte une estimation ?', a: "La première estimation sur photographies est gratuite et sans engagement. Une expertise écrite détaillée ou un déplacement peuvent être facturés : l'expert vous l'indique avant tout engagement." },
+  { q: 'Quels objets estimez-vous ?', a: "Mobilier ancien, sculptures, céramiques et porcelaines, pendules et horloges, argenterie, livres et manuscrits, bijoux anciens, ainsi que des ensembles issus de successions." },
+  { q: 'Que faut-il joindre à ma demande ?', a: "Des photographies nettes sous plusieurs angles, les dimensions, les marques ou signatures visibles, l'état général et, si vous les avez, l'origine de l'objet et d'éventuels documents." },
+  { q: 'Combien de temps faut-il attendre ?', a: "Un référent lit votre demande et la confie à un expert. La réponse écrite arrive en général dans les jours qui suivent, plus longtemps si l'objet demande des recherches." },
+  { q: 'Dois-je vendre après l’estimation ?', a: "Non. L'estimation ne vous engage à rien. Vous pouvez conserver l'objet, le vendre par vos propres moyens ou le proposer au réseau." },
+];
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+const serviceLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: "Estimation d'objets d'art et d'antiquités",
+  provider: { '@id': `${SITE.url}/#organization` },
+  areaServed: { '@type': 'Country', name: 'France' },
+  url: `${SITE.url}/estimation/`,
+};
+---
+<Base
+  title="Estimation d'objets d'art et de mobilier ancien | Réseau"
+  description="Faites estimer vos antiquités, mobilier ancien ou objets d'art par un expert du Réseau Antiquaires : avis écrit, prix expliqué, sans engagement."
+  jsonLd={[faqLd, serviceLd]}
+  crumbs={[{ name: 'Estimation', path: '/estimation/' }]}
+>
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="split split--wide-text" style="align-items:end" data-enter>
+        <div>
+          <span class="eyebrow" style="--i:0">Estimation, expertise, achat</span>
+          <h1 style="--i:1">Estimation d’objets d’art et de mobilier ancien</h1>
+          <p class="lede" style="--i:2">Décrivez votre objet, joignez des photographies : un expert du réseau vous remet un avis écrit, clair et motivé.</p>
+          <div class="actions" style="--i:3"><Cta label="Demander une estimation" /></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap"><Photo name="f94978524" frame="panorama" eager sizes="100vw" position="50% 40%" /></div>
+  </section>
+
+  <section class="section" aria-labelledby="etapes">
+    <div class="wrap">
+      <div class="split split--wide-text" style="align-items:start">
+        <div class="head" style="margin-bottom:0">
+          <span class="eyebrow">Le déroulé</span>
+          <h2 id="etapes">Quatre étapes, de la demande à la décision</h2>
+          <p class="lede">Vous n’avez rien à avancer et rien à signer avant d’avoir lu l’avis de l’expert.</p>
+        </div>
+        <ol class="steps">
+          <li><div><h3>Vous décrivez l’objet</h3><p>Photographies, dimensions, marques, provenance. Un quart d’heure suffit.</p></div></li>
+          <li><div><h3>Un expert est désigné</h3><p>Le référent du réseau confie le dossier à la maison dont la spécialité correspond, au plus proche de chez vous.</p></div></li>
+          <li><div><h3>Vous recevez l’avis écrit</h3><p>Identification, datation, état, références comparables et fourchette de valeur. En cas d’enjeu, un second expert relit.</p></div></li>
+          <li><div><h3>Vous décidez</h3><p>Conserver, vendre ou proposer l’objet au réseau, qui peut faire une offre d’achat ferme.</p></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--deep on-deep" aria-labelledby="achat">
+    <div class="wrap">
+      <div class="split">
+        <div class="stack">
+          <span class="eyebrow">Vendre au réseau</span>
+          <h2 id="achat">Une offre d’achat, sans intermédiaire</h2>
+          <p class="lede">Lorsque l’objet intéresse une maison du réseau, elle peut vous faire une offre d’achat. Vous comparez l’offre à la fourchette de l’avis écrit.</p>
+          <ul class="ticks" style="--line:rgba(243,236,220,.2)">
+            <li>Offre ferme, détaillée, valable un temps déterminé.</li>
+            <li>Retrait de l’objet à domicile pour les pièces volumineuses.</li>
+            <li>Règlement par virement, à la remise de l’objet.</li>
+          </ul>
+        </div>
+        <Photo name="f132036671" frame="wide" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="questions">
+    <div class="wrap">
+      <div class="split split--wide-text" style="align-items:start">
+        <div class="head" style="margin-bottom:0">
+          <span class="eyebrow">Questions fréquentes</span>
+          <h2 id="questions">Ce que l’on nous demande avant une estimation</h2>
+        </div>
+        <Faq items={faq} idPrefix="est-faq" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--surface" aria-labelledby="demarrer">
+    <div class="wrap">
+      <div class="split split--wide-text">
+        <div class="head" style="margin-bottom:0">
+          <h2 id="demarrer">Prêt à décrire votre objet ?</h2>
+          <p class="lede">Le formulaire prend quelques minutes. Les photographies sont la partie la plus utile de votre demande.</p>
+        </div>
+        <div class="actions" style="margin-top:0"><Cta label="Demander une expertise" /></div>
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,33 @@
+---
+import Base from '../../layouts/Base.astro';
+import credits from '../../data/credits.json';
+---
+<Base
+  title="Mentions légales et crédits photographiques | Réseau"
+  description="Mentions légales du site reseau-antiquaires.fr, éditeur, hébergement, données personnelles et crédits photographiques des images utilisées sur le site."
+  crumbs={[{ name: 'Mentions légales', path: '/mentions-legales/' }]}
+>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Informations légales</span>
+      <h1>Mentions légales</h1>
+    </div>
+  </section>
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="prose" style="max-width:46rem">
+        <h2>Éditeur du site</h2>
+        <p>Réseau Antiquaires, groupement d’antiquaires et d’experts d’art. <!-- À compléter : forme juridique, siège, SIREN, directeur de la publication. --></p>
+        <h2>Hébergement</h2>
+        <p><!-- À compléter : nom et adresse de l’hébergeur. --></p>
+        <h2>Données personnelles</h2>
+        <p>Les informations transmises par le formulaire de contact (réalisé avec Tally) servent uniquement à traiter votre demande. Vous pouvez demander leur consultation ou leur suppression en écrivant au Réseau par ce même formulaire.</p>
+        <h2 id="credits">Crédits photographiques</h2>
+        <p>Les photographies du site proviennent de Wikimedia Commons, sous licences libres (CC0, CC BY, CC BY-SA). Elles seront remplacées par les photographies des maisons du réseau.</p>
+        <ul class="credits-list">
+          {credits.map((c) => <li><a class="link" href={c.page} rel="noopener">{c.by}</a> — {c.licence}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+</Base>

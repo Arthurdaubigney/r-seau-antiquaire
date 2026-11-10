@@ -1,0 +1,60 @@
+---
+import Base from '../../layouts/Base.astro';
+import Photo from '../../components/Photo.astro';
+import Cta from '../../components/Cta.astro';
+import { EXPERTISES } from '../../config/site';
+
+const sections = [
+  { id: 'mobilier', photos: ['f133826381', 'f30090125'], intro: "Du cabinet Louis XIV à la commode Napoléon III, le mobilier se lit dans ses bois, ses assemblages et ses bronzes. Nos experts distinguent l’époque, l’atelier et les restaurations.",
+    items: ['Commodes, secrétaires, bureaux, cabinets', 'Sièges : fauteuils, bergères, chaises', 'Bronzes d’ameublement, marqueterie, vernis', 'Ensembles de salon et de salle à manger'] },
+  { id: 'sculpture', photos: ['f112299758', 'f63980294'], intro: "Marbres antiques, bronzes d’édition, terres cuites : l’expert regarde la matière, la patine et la facture avant de se prononcer sur l’attribution.",
+    items: ['Marbres et pierres sculptées', 'Bronzes, fontes d’édition, patines', 'Terres cuites et plâtres d’atelier', 'Statuaire de jardin et décors architecturaux'] },
+  { id: 'ceramique', photos: ['f60177225', 'f76021423'], intro: "Porcelaine tendre, faïence fine, céladon : les marques, les pâtes et les décors permettent de remonter jusqu’à la manufacture et à la période.",
+    items: ['Porcelaines françaises et européennes', 'Faïences régionales', 'Céramiques d’Asie : céladons, bleu et blanc', 'Vases, garnitures de cheminée, services'] },
+  { id: 'horlogerie', photos: ['f84517055', 'f3229930'], intro: "Un mouvement signé, un cadran émaillé, un cabinet sculpté : l’horlogerie demande d’examiner la mécanique autant que le décor.",
+    items: ['Pendules de cheminée et de table', 'Cartels et horloges comtoises', 'Montres de gousset et pendulettes', 'Mouvements, échappements, signatures'] },
+  { id: 'argenterie', photos: ['f30935634'], intro: "Poinçons, titres, orfèvres : l’argenterie se vérifie au poinçon. Les services en porcelaine et en métal argenté demandent la même attention.",
+    items: ['Orfèvrerie en argent massif', 'Métal argenté, couverts, plateaux', 'Services à thé et à café', 'Verrerie, cristal, arts de la table'] },
+  { id: 'livres', photos: ['f67001337', 'f51846334'], intro: "Reliures, éditions originales, bibliothèques de famille : le libraire ancien regarde l’état, la complétude et la provenance de chaque volume.",
+    items: ['Éditions originales et livres illustrés', 'Reliures de cuir et reliures d’éditeur', 'Manuscrits, correspondances, documents', 'Bibliothèques entières, inventaire et prisée'] },
+  { id: 'bijoux', photos: ['f154936376', 'f154523680'], intro: "Or, émaux, pierres de couleur : le joaillier identifie les matières, date la monture et reconnaît les travaux d’atelier.",
+    items: ['Bagues, bracelets, broches, pendentifs', 'Joaillerie ancienne et bijoux d’époque', 'Camées, intailles, émaux', 'Parures de famille et successions'] },
+];
+const byId = Object.fromEntries(EXPERTISES.map((e) => [e.id, e]));
+---
+<Base
+  title="Expertises — Mobilier, sculpture, céramique, horlogerie"
+  description="Les sept domaines d'expertise du Réseau Antiquaires : mobilier ancien, sculpture, céramique, horlogerie, argenterie, livres anciens et bijoux anciens."
+  crumbs={[{ name: 'Expertises', path: '/expertises/' }]}
+>
+  <section class="page-hero">
+    <div class="wrap" data-enter>
+      <span class="eyebrow" style="--i:0">Expertises</span>
+      <h1 style="--i:1">Sept domaines d’expertise pour objets d’art et mobilier ancien</h1>
+      <p class="lede" style="--i:2">Chaque domaine a ses experts. Vous trouvez ci-dessous ce que nous examinons, estimons et achetons.</p>
+    </div>
+  </section>
+
+  {sections.map((s, i) => {
+    const e = byId[s.id];
+    const flip = i % 2 === 1;
+    const [a, b] = s.photos;
+    return (
+      <section id={s.id} class={`section ${i % 2 === 0 ? '' : 'section--surface'}`} aria-labelledby={`h-${s.id}`}>
+        <div class="wrap">
+          <div class={`split ${flip ? 'split--reverse' : ''}`}>
+            <div class="stack">
+              <span class="eyebrow">{String(i + 1).padStart(2, '0')} / 07</span>
+              <h2 id={`h-${s.id}`}>{e.name}</h2>
+              <p class="lede">{s.intro}</p>
+              <h3 style="font-size:1.15rem;font-family:var(--font-body);font-weight:600;letter-spacing:0">Ce que nous examinons</h3>
+              <ul class="ticks">{s.items.map((it) => <li>{it}</li>)}</ul>
+              <div class="actions"><Cta label="Faire expertiser un objet" /></div>
+            </div>
+            <Photo name={a} frame={b ? 'tall' : 'wide'} />
+          </div>
+        </div>
+      </section>
+    );
+  })}
+</Base>

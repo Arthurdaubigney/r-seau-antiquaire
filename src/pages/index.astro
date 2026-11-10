@@ -1,0 +1,149 @@
+---
+import Base from '../layouts/Base.astro';
+import Photo from '../components/Photo.astro';
+import Cta from '../components/Cta.astro';
+import TextLink from '../components/TextLink.astro';
+import Faq from '../components/Faq.astro';
+import { EXPERTISES, REGIONS } from '../config/site';
+import { organizationGraph } from '../config/schema';
+
+const featured = EXPERTISES.slice(0, 4);
+const faq = [
+  { q: 'Qui répond à ma demande ?', a: "Un expert du réseau spécialisé dans votre type d'objet. Si votre demande touche plusieurs domaines, deux experts examinent le dossier ensemble." },
+  { q: 'Dois-je me déplacer pour une estimation ?', a: "Pas pour une première estimation : quelques photographies suffisent. Pour une expertise détaillée, l'expert vous propose un rendez-vous chez vous ou dans la maison la plus proche." },
+  { q: 'Mes informations restent-elles confidentielles ?', a: "Oui. Votre demande n'est lue que par les experts qui la traitent. Le nom des propriétaires n'est jamais communiqué sans leur accord." },
+  { q: 'Puis-je vendre au réseau ?', a: "Si l'objet correspond aux domaines des maisons membres, elles peuvent vous faire une offre d'achat. Vous restez libre de la refuser, sans frais." },
+];
+---
+<Base
+  title="Réseau Antiquaires — Groupement d'experts et d'antiquaires"
+  description="Réseau Antiquaires réunit antiquaires et experts indépendants pour estimer, expertiser et acheter mobilier ancien et objets d’art partout en France."
+  jsonLd={[organizationGraph]}
+>
+  <section class="hero">
+    <div class="wrap">
+      <div class="split">
+        <div class="hero__text" data-enter>
+          <span class="eyebrow" style="--i:0">Groupement d’experts et d’antiquaires · France</span>
+          <h1 style="--i:1">Réseau Antiquaires — Groupement d’experts et d’antiquaires</h1>
+          <p class="lede" style="--i:2">Une seule demande, l’avis de l’expert qui connaît votre objet. Mobilier, sculpture, céramique, horlogerie, argenterie, livres et bijoux anciens.</p>
+          <div class="actions" style="--i:3">
+            <Cta label="Demander une expertise" />
+            <Cta label="Découvrir le Réseau" href="/le-reseau/" variant="ghost" />
+          </div>
+          <p class="hero__fact" style="--i:4">Première estimation à partir de quelques photographies, gratuite et sans engagement.</p>
+        </div>
+        <div class="hero__media">
+          <Photo name="f15491337" frame="tall" eager sizes="(min-width: 900px) 46vw, 100vw" alt="Cabinet doré d'un salon du XVIIIᵉ siècle : boiseries claires, bureau plat et sièges d'époque" position="50% 40%" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--surface" aria-labelledby="repere">
+    <div class="wrap">
+      <span class="eyebrow">Notre approche</span>
+      <h2 id="repere" class="statement" data-words>Chaque objet a son spécialiste. Le Réseau vous met en relation avec celui qui l’a déjà tenu entre les mains, et vous garantit un avis écrit, motivé et indépendant.</h2>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="expertises">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Domaines</span>
+        <h2 id="expertises">Sept domaines d’expertise, une même exigence</h2>
+        <p class="lede">Chaque maison du réseau est reconnue dans une ou plusieurs spécialités. Votre dossier est confié à celle qui convient.</p>
+      </div>
+      <div class="grid grid--4">
+        {featured.map((e) => (
+          <a class="card" href={`/expertises/#${e.id}`}>
+            <Photo name={e.photo} frame="tall" sizes="(min-width: 1100px) 22vw, (min-width: 700px) 45vw, 100vw" />
+            <h3>{e.name}</h3>
+            <p>{e.line}</p>
+          </a>
+        ))}
+      </div>
+      <p style="margin-top: var(--s5)"><TextLink href="/expertises/" label="Voir les sept domaines d’expertise" /></p>
+    </div>
+  </section>
+
+  <section class="section section--deep on-deep" aria-labelledby="charte">
+    <div class="wrap">
+      <div class="split split--reverse">
+        <div class="stack">
+          <span class="eyebrow">La charte</span>
+          <h2 id="charte">Trois engagements, signés par chaque maison</h2>
+          <ol class="steps">
+            <li><div><h3>Un avis collégial</h3><p>Pour tout objet de valeur, un second expert relit l’estimation avant qu’elle ne vous soit remise.</p></div></li>
+            <li><div><h3>Des prix expliqués</h3><p>Chaque estimation précise l’époque, l’état, les références comparables et ce qui fait varier le prix.</p></div></li>
+            <li><div><h3>Une discrétion totale</h3><p>Succession, divorce, collection privée : votre dossier reste entre les mains de ceux qui l’instruisent.</p></div></li>
+          </ol>
+          <TextLink href="/le-reseau/" label="Lire la charte du Réseau" />
+        </div>
+        <Photo name="f15094844" frame="tall" alt="Salon-bibliothèque de style Louis XV, fauteuils clairs et boiseries sur tapis ancien" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="estimation">
+    <div class="wrap">
+      <div class="split split--wide-text">
+        <div>
+          <div class="head" style="margin-bottom: var(--s5)">
+            <span class="eyebrow">Estimation</span>
+            <h2 id="estimation">De la photographie à l’avis écrit, en quatre étapes</h2>
+          </div>
+          <ol class="steps">
+            <li><div><h3>Vous décrivez l’objet</h3><p>Photographies, dimensions, marques, provenance : le formulaire vous guide.</p></div></li>
+            <li><div><h3>Un expert est désigné</h3><p>Celui dont la spécialité correspond à votre objet, dans la région la plus proche.</p></div></li>
+            <li><div><h3>Vous recevez un avis écrit</h3><p>Identification, datation, état et fourchette de valeur, en langage clair.</p></div></li>
+            <li><div><h3>Vous décidez</h3><p>Conserver, vendre ou proposer l’objet au réseau. Aucune obligation.</p></div></li>
+          </ol>
+          <div class="actions"><Cta label="Demander une estimation" /><Cta label="Voir le déroulé complet" href="/estimation/" variant="ghost" /></div>
+        </div>
+        <Photo name="f94978524" frame="square" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--surface" aria-labelledby="maisons">
+    <div class="wrap">
+      <div class="split split--wide-text">
+        <div class="head" style="margin-bottom:0">
+          <span class="eyebrow">Les maisons</span>
+          <h2 id="maisons">Six régions, des maisons indépendantes</h2>
+          <p class="lede">Chaque maison garde son nom, sa clientèle et ses ateliers. Le Réseau les relie pour que votre demande trouve le bon interlocuteur, où que vous soyez.</p>
+          <p style="margin-top: var(--s4)"><TextLink href="/maisons/" label="Voir les régions couvertes" /></p>
+        </div>
+        <ul class="regions">
+          {REGIONS.map((r) => <li><h3>{r.name}</h3></li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="questions">
+    <div class="wrap">
+      <div class="split split--wide-text" style="align-items:start">
+        <div class="head" style="margin-bottom:0">
+          <span class="eyebrow">Questions fréquentes</span>
+          <h2 id="questions">Avant de nous écrire</h2>
+          <p class="lede">Les réponses aux questions que l’on nous pose le plus souvent.</p>
+        </div>
+        <Faq items={faq} idPrefix="home-faq" />
+      </div>
+    </div>
+  </section>
+
+  <section class="closing on-deep" aria-labelledby="contact">
+    <Photo name="f180083200" frame="free" eager={false} sizes="100vw" position="50% 35%" class="" />
+    <div class="section">
+      <div class="wrap">
+        <span class="eyebrow">Contact</span>
+        <h2 id="contact">Un objet à faire expertiser ?</h2>
+        <p class="lede">Décrivez-le en quelques lignes et joignez des photographies. Un expert du réseau vous répond.</p>
+        <div class="actions"><Cta label="Demander une expertise" /><Cta label="Contacter le Réseau" href="/contact/" variant="ghost" /></div>
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,45 @@
+---
+/**
+ * Conteneur responsive du formulaire Tally.
+ *  - Renseigner PUBLIC_TALLY_FORM_ID (ou la prop `formId`) : l'iframe est injectée au moment où le bloc approche de l'écran.
+ *  - Sans identifiant : un cadre de réserve s'affiche à la place, prêt à recevoir l'iframe.
+ * Lien direct du formulaire : https://tally.so/r/<id>
+ */
+import { SITE } from '../config/site';
+interface Props { formId?: string; title?: string; id?: string; minHeight?: number }
+const { formId = SITE.tallyFormId, title = "Formulaire de demande d'expertise", id = 'formulaire', minHeight = 560 } = Astro.props;
+const src = formId ? `https://tally.so/embed/${formId}?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1` : '';
+---
+<div class="tally" id={id} style={`min-height:${minHeight}px`} data-tally data-tally-src={src || undefined}>
+  {src ? (
+    <>
+      <iframe title={title} data-tally-iframe width="100%" height={minHeight - 20} frameborder="0" marginheight="0" marginwidth="0"></iframe>
+      <noscript><p>Ce formulaire nécessite JavaScript. <a class="link" href={`https://tally.so/r/${formId}`} rel="noopener">Ouvrir le formulaire dans une nouvelle page</a>.</p></noscript>
+    </>
+  ) : (
+    <div class="tally__placeholder">
+      <h3>Formulaire de demande d’expertise</h3>
+      <p>Le formulaire en ligne est en cours de raccordement. Il s’affichera ici dès qu’il sera publié.</p>
+      <!-- Renseigner PUBLIC_TALLY_FORM_ID pour afficher le formulaire Tally ici. -->
+    </div>
+  )}
+</div>
+<script>
+  // Charge Tally seulement quand le bloc approche de l'écran (performance).
+  const box = document.querySelector<HTMLElement>('[data-tally-src]');
+  const frame = box?.querySelector<HTMLIFrameElement>('[data-tally-iframe]');
+  if (box && frame) {
+    const load = () => {
+      frame.src = box.dataset.tallySrc!;
+      const s = document.createElement('script');
+      s.src = 'https://tally.so/widgets/embed.js';
+      s.async = true;
+      s.onload = () => (window as any).Tally?.loadEmbeds?.();
+      document.body.appendChild(s);
+    };
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((e) => { if (e[0].isIntersecting) { io.disconnect(); load(); } }, { rootMargin: '400px' });
+      io.observe(box);
+    } else load();
+  }
+</script>

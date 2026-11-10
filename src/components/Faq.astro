@@ -1,0 +1,19 @@
+---
+interface Props { items: { q: string; a: string }[]; idPrefix?: string }
+const { items, idPrefix = 'faq' } = Astro.props;
+---
+<div class="acc" data-acc>
+  {items.map((it, i) => (
+    <div class="acc-item">
+      <h3>
+        <button class="acc-trigger" type="button" aria-expanded="false" aria-controls={`${idPrefix}-${i}`} id={`${idPrefix}-t${i}`}>
+          <span>{it.q}</span>
+          <svg class="acc-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 7l7 6 7-6" vector-effect="non-scaling-stroke" /></svg>
+        </button>
+      </h3>
+      <div class="acc-panel" id={`${idPrefix}-${i}`} role="region" aria-labelledby={`${idPrefix}-t${i}`}>
+        <div class="acc-panel__inner"><div><p>{it.a}</p></div></div>
+      </div>
+    </div>
+  ))}
+</div>

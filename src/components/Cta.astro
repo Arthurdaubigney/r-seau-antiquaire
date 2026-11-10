@@ -1,0 +1,9 @@
+---
+import { SITE } from '../config/site';
+interface Props { label?: string; href?: string; variant?: 'solid' | 'ghost'; class?: string }
+const { label = 'Demander une expertise', href = SITE.contactPath, variant = 'solid', class: cls = '' } = Astro.props;
+---
+<a class={`btn ${variant === 'ghost' ? 'btn--ghost' : ''} ${cls}`.trim()} href={href}>
+  <span>{label}</span>
+  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 10h13M11 4.5 16.5 10 11 15.5" /></svg>
+</a>

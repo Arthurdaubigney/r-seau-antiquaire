@@ -1,0 +1,108 @@
+---
+import '@fontsource/cormorant-garamond/500.css';
+import '@fontsource/cormorant-garamond/500-italic.css';
+import '@fontsource-variable/instrument-sans';
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE } from '../config/site';
+
+interface Props {
+  title: string;        // ~55-60 caractères
+  description: string;  // ~145-150 caractères
+  image?: string;
+  jsonLd?: Record<string, unknown>[];
+  noindex?: boolean;
+  crumbs?: { name: string; path: string }[];
+}
+const { title, description, image = '/og.jpg', jsonLd = [], noindex = false, crumbs = [] } = Astro.props;
+const canonical = new URL(Astro.url.pathname, SITE.url).href;
+const ogImage = new URL(image, SITE.url).href;
+
+const breadcrumb = crumbs.length
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [{ name: 'Accueil', path: '/' }, ...crumbs].map((c, i) => ({
+        '@type': 'ListItem', position: i + 1, name: c.name, item: new URL(c.path, SITE.url).href,
+      })),
+    }
+  : null;
+const graphs = [...jsonLd, ...(breadcrumb ? [breadcrumb] : [])];
+---
+<!doctype html>
+<html lang="fr" data-type="service">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="page-type" content="service" />
+    <meta name="site-kind" content="other" />
+    <meta name="theme-color" content="#f6f1e6" />
+    <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:locale" content={SITE.locale} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script is:inline>document.documentElement.classList.add('js');</script>
+    {graphs.map((g) => <script type="application/ld+json" set:html={JSON.stringify(g)} />)}
+  </head>
+  <body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+    <Header />
+    <main id="contenu" tabindex="-1">
+      <slot />
+    </main>
+    <Footer />
+    <script>
+      // Menu mobile
+      const btn = document.querySelector<HTMLButtonElement>('[data-menu-btn]');
+      const menu = document.querySelector<HTMLElement>('[data-menu]');
+      const label = document.querySelector<HTMLElement>('[data-menu-label]');
+      const setMenu = (open: boolean) => {
+        btn?.setAttribute('aria-expanded', String(open));
+        menu?.setAttribute('data-open', String(open));
+        if (label) label.textContent = open ? 'Fermer' : 'Menu';
+        document.body.style.overflow = open ? 'hidden' : '';
+      };
+      btn?.addEventListener('click', () => setMenu(btn.getAttribute('aria-expanded') !== 'true'));
+      menu?.addEventListener('click', (e) => { if ((e.target as HTMLElement).closest('a')) setMenu(false); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
+      matchMedia('(min-width: 980px)').addEventListener('change', (m) => m.matches && setMenu(false));
+
+      // Accordéon
+      document.querySelectorAll<HTMLButtonElement>('.acc-trigger').forEach((t) =>
+        t.addEventListener('click', () => t.setAttribute('aria-expanded', String(t.getAttribute('aria-expanded') !== 'true')))
+      );
+
+      // Instant dosé : la phrase de repère se révèle mot à mot pendant la lecture
+      const stm = document.querySelector<HTMLElement>('[data-words]');
+      if (stm && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const words = (stm.textContent ?? '').trim().split(/\s+/);
+        stm.setAttribute('aria-label', words.join(' '));
+        stm.innerHTML = words.map((w) => `<span class="w" aria-hidden="true">${w}</span>`).join(' ');
+        const spans = [...stm.querySelectorAll<HTMLElement>('.w')];
+        let ticking = false;
+        const update = () => {
+          ticking = false;
+          const r = stm.getBoundingClientRect();
+          const vh = innerHeight;
+          const progress = Math.min(1, Math.max(0, (vh * 0.85 - r.top) / (vh * 0.55 + r.height * 0.5)));
+          const n = Math.round(progress * spans.length);
+          spans.forEach((s, i) => s.classList.toggle('on', i < n));
+        };
+        addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+        update();
+      }
+    </script>
+  </body>
+</html>

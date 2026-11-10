@@ -1,0 +1,40 @@
+---
+import Base from '../../layouts/Base.astro';
+import Photo from '../../components/Photo.astro';
+import TallyForm from '../../components/TallyForm.astro';
+---
+<Base
+  title="Contacter le Réseau Antiquaires — Demande d’expertise"
+  description="Décrivez votre objet et joignez des photographies : un expert du Réseau Antiquaires vous répond par écrit. Estimation gratuite sur photographies."
+  crumbs={[{ name: 'Contact', path: '/contact/' }]}
+>
+  <section class="page-hero">
+    <div class="wrap" data-enter>
+      <span class="eyebrow" style="--i:0">Contact</span>
+      <h1 style="--i:1">Contacter le Réseau Antiquaires</h1>
+      <p class="lede" style="--i:2">Une demande d’expertise, une question sur une succession, une candidature : un référent du réseau lit chaque message.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0" aria-labelledby="demande">
+    <div class="wrap">
+      <div class="split split--wide-text" style="align-items:start">
+        <div class="stack">
+          <h2 id="demande">Préparer votre demande</h2>
+          <p>Plus votre description est précise, plus l’avis est rapide. Rassemblez, si possible :</p>
+          <ul class="ticks">
+            <li>Trois à six photographies nettes, sous plusieurs angles et en gros plan sur les marques.</li>
+            <li>Les dimensions et, pour un meuble, la profondeur.</li>
+            <li>Signatures, poinçons, étiquettes ou numéros visibles.</li>
+            <li>L’origine de l’objet : succession, achat, cadeau, et les documents conservés.</li>
+          </ul>
+          <Photo name="f8912320" frame="wide" class="" />
+        </div>
+        <div>
+          <h2 style="font-size:clamp(1.7rem,2.4vw,2.2rem);margin-bottom:var(--s3)">Votre demande</h2>
+          <TallyForm />
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

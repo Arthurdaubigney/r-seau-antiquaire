@@ -1,0 +1,92 @@
+---
+import Base from '../../layouts/Base.astro';
+import Photo from '../../components/Photo.astro';
+import Cta from '../../components/Cta.astro';
+import TextLink from '../../components/TextLink.astro';
+---
+<Base
+  title="Le Réseau — Groupement d'antiquaires et d'experts d'art"
+  description="Découvrez le Réseau Antiquaires : maisons indépendantes, charte commune et experts engagés sur chaque estimation, en toute discrétion, partout en France."
+  crumbs={[{ name: 'Le Réseau', path: '/le-reseau/' }]}
+>
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="split split--wide-text" style="align-items:end" data-enter>
+        <div>
+          <span class="eyebrow" style="--i:0">Le Réseau</span>
+          <h1 style="--i:1">Un groupement d’antiquaires et d’experts indépendants</h1>
+          <p class="lede" style="--i:2">Le Réseau Antiquaires réunit des maisons qui ont chacune leur histoire, leur clientèle et leur spécialité, et qui ont choisi de travailler sous une même charte.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap"><Photo name="f6351984" frame="panorama" eager sizes="100vw" alt="Chambre d'apparat de style Louis XV avec lit à baldaquin et mobilier ancien" position="50% 55%" /></div>
+  </section>
+
+  <section class="section" aria-labelledby="pourquoi">
+    <div class="wrap">
+      <div class="split split--wide-text" style="align-items:start">
+        <div class="head" style="margin-bottom:0">
+          <span class="eyebrow">Pourquoi un réseau</span>
+          <h2 id="pourquoi">Parce qu’aucun expert ne connaît tout</h2>
+        </div>
+        <div class="stack">
+          <p>Un secrétaire d’ébéniste, une pendule de cheminée, un bronze d’atelier et une bague ancienne ne demandent pas le même œil. Les maisons du réseau se sont réunies pour que chaque objet soit examiné par la personne la mieux placée pour en parler.</p>
+          <p>Le client n’a plus à chercher : il décrit son objet une fois, et le Réseau l’oriente. Pour les dossiers qui mêlent plusieurs spécialités, une succession par exemple, plusieurs experts travaillent ensemble et remettent un avis unique.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--deep on-deep" aria-labelledby="charte">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">La charte</span>
+        <h2 id="charte">Quatre règles que chaque maison s’engage à tenir</h2>
+      </div>
+      <ol class="steps steps--cols" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+        <li><div><h3>Indépendance</h3><p>Chaque maison reste propriétaire de son fonds et de ses choix. Aucun expert n’estime un objet qu’il cherche à acquérir sans en avertir le client.</p></div></li>
+        <li><div><h3>Collégialité</h3><p>Au-delà d’un seuil de valeur, un second expert relit l’estimation avant qu’elle ne soit remise.</p></div></li>
+        <li><div><h3>Transparence</h3><p>Tout avis est écrit : identification, datation, état, références comparables et fourchette de prix.</p></div></li>
+        <li><div><h3>Discrétion</h3><p>Les dossiers de succession, de divorce ou de collection privée ne sont jamais divulgués.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="fonctionnement">
+    <div class="wrap">
+      <div class="split">
+        <Photo name="f14842723" frame="tall" />
+        <div class="stack">
+          <span class="eyebrow">Fonctionnement</span>
+          <h2 id="fonctionnement">Comment le Réseau traite une demande</h2>
+          <ul class="ticks">
+            <li>Votre demande arrive par un formulaire unique, avec photographies.</li>
+            <li>Elle est lue le jour même par un référent du réseau, qui désigne l’expert compétent.</li>
+            <li>L’expert vous répond par écrit, puis propose si besoin un rendez-vous.</li>
+            <li>Vous gardez la main : conserver, vendre ou confier l’objet au réseau.</li>
+          </ul>
+          <div class="actions"><Cta label="Demander une expertise" /></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--surface" aria-labelledby="rejoindre">
+    <div class="wrap">
+      <div class="split split--wide-text">
+        <div class="head" style="margin-bottom:0">
+          <span class="eyebrow">Rejoindre le Réseau</span>
+          <h2 id="rejoindre">Antiquaire ou expert : vous souhaitez candidater ?</h2>
+          <p class="lede">Le Réseau accueille de nouvelles maisons sur présentation et après examen de leur activité. Écrivez-nous pour ouvrir la discussion.</p>
+        </div>
+        <div class="stack">
+          <p>Les candidatures sont étudiées par les maisons déjà membres. Nous vous demandons une présentation de votre activité, de vos spécialités et de deux références clients.</p>
+          <TextLink href="/contact/#formulaire" label="Contacter le Réseau" />
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

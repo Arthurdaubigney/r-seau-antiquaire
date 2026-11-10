@@ -1,0 +1,32 @@
+---
+import { photo } from '../data/photos';
+interface Props {
+  name: string;
+  /** Rapport du cadre : tall (4/5), wide (16/10), square, panorama, ou libre (ratio d'origine). */
+  frame?: 'tall' | 'wide' | 'square' | 'panorama' | 'free';
+  sizes?: string;
+  eager?: boolean;
+  alt?: string;
+  position?: string;
+  class?: string;
+}
+const { name, frame = 'wide', sizes = '(min-width: 900px) 50vw, 100vw', eager = false, alt, position, class: cls = '' } = Astro.props;
+const p = photo(name);
+const text = alt ?? p.alt;
+---
+<figure class={`ph ph--${frame} ${cls}`.trim()}>
+  <img
+    src={p.src}
+    srcset={p.srcset}
+    sizes={sizes}
+    width={p.w}
+    height={p.h}
+    alt={text}
+    title={text}
+    loading={eager ? 'eager' : 'lazy'}
+    decoding={eager ? 'sync' : 'async'}
+    fetchpriority={eager ? 'high' : undefined}
+    data-source="stand-in"
+    style={position ? `object-position:${position}` : undefined}
+  />
+</figure>
