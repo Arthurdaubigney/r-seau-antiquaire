@@ -1,4 +1,4 @@
-import { SITE, REGIONS } from './site';
+import { SITE } from './site';
 
 /** Données structurées de l'organisation (reprises sur l'accueil). */
 export const organizationGraph = {
@@ -23,7 +23,7 @@ export const organizationGraph = {
       logo: `${SITE.url}/favicon.svg`,
       image: `${SITE.url}/og.jpg`,
       address: { '@type': 'PostalAddress', addressCountry: 'FR' },
-      areaServed: REGIONS.map((r) => ({ '@type': 'AdministrativeArea', name: r.name })),
+      areaServed: { '@type': 'Country', name: 'France' },
       knowsAbout: ['Mobilier ancien', 'Sculpture', 'Céramique et porcelaine', 'Horlogerie ancienne', 'Argenterie', 'Livres anciens', 'Bijoux anciens'],
       makesOffer: [
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: "Estimation d'objets d'art et d'antiquités" } },

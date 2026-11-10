@@ -4,7 +4,7 @@ import Photo from '../components/Photo.astro';
 import Cta from '../components/Cta.astro';
 import TextLink from '../components/TextLink.astro';
 import Faq from '../components/Faq.astro';
-import { EXPERTISES, REGIONS } from '../config/site';
+import { EXPERTISES } from '../config/site';
 import { organizationGraph } from '../config/schema';
 
 const featured = EXPERTISES.slice(0, 4);
@@ -116,22 +116,6 @@ const faq = [
           <div class="actions"><Cta label="Demander une estimation" /><Cta label="Voir le déroulé complet" href="/estimation/" variant="ghost" /></div>
         </div>
         <Photo name="f94978524" frame="wide" />
-      </div>
-    </div>
-  </section>
-
-  <section class="section section--surface" aria-labelledby="maisons">
-    <div class="wrap">
-      <div class="split split--wide-text">
-        <div class="head" style="margin-bottom:0">
-          <span class="eyebrow">Les maisons</span>
-          <h2 id="maisons">Six régions, des maisons indépendantes</h2>
-          <p class="lede">Chaque maison garde son nom, sa clientèle et ses ateliers. Le Réseau les relie pour que votre demande trouve le bon interlocuteur, où que vous soyez.</p>
-          <p style="margin-top: var(--s4)"><TextLink href="/maisons/" label="Voir les régions couvertes" /></p>
-        </div>
-        <ul class="regions">
-          {REGIONS.map((r) => <li><h3>{r.name}</h3></li>)}
-        </ul>
       </div>
     </div>
   </section>

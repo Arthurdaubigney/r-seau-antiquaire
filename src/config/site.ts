@@ -16,16 +16,6 @@ export const NAV = [
   { href: '/le-reseau/', label: 'Le Réseau' },
   { href: '/expertises/', label: 'Expertises' },
   { href: '/estimation/', label: 'Estimation' },
-  { href: '/maisons/', label: 'Les maisons' },
-] as const;
-
-export const REGIONS = [
-  { name: 'Paris et Île-de-France', focus: 'Mobilier du XVIIIᵉ siècle, bronzes, pendules, argenterie' },
-  { name: 'Lyon et Rhône-Alpes', focus: 'Soieries, faïences, mobilier provincial, livres anciens' },
-  { name: 'Bordeaux et Sud-Ouest', focus: 'Mobilier de port, cristaux, peintures, arts de la table' },
-  { name: 'Provence et Côte d’Azur', focus: 'Céramiques, mobilier provençal, bijoux, sculpture' },
-  { name: 'Nord et Grand Est', focus: 'Horlogerie, orfèvrerie, faïences de l’Est, curiosités' },
-  { name: 'Bretagne et Pays de la Loire', focus: 'Marine, mobilier de cabinet, argenterie, objets de voyage' },
 ] as const;
 
 export const EXPERTISES = [

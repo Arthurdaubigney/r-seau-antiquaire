@@ -195,11 +195,6 @@ a.card:hover { transform: translateY(-2px); }
 .ticks li { position: relative; padding: 12px 0 12px 28px; border-bottom: 1px solid var(--line); }
 .ticks li::before { content: ''; position: absolute; left: 0; top: 1.35em; width: 12px; height: 1px; background: var(--accent); }
 
-/* Maisons ---------------------------------------------------------------- */
-.regions li { display: grid; gap: 6px var(--s4); padding: var(--s3) 0; border-bottom: 1px solid var(--line); }
-.regions h3 { font-size: 1.6rem; }
-.regions p { margin: 0; color: var(--muted); }
-@media (min-width: 800px) { .regions li { grid-template-columns: 1fr 1.3fr; align-items: baseline; } }
 
 /* Accordéon (transitions.dev n°21 : grid-rows) --------------------------- */
 .acc { border-top: 1px solid var(--line); }

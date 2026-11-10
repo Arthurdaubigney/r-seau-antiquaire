@@ -29,7 +29,7 @@ Tous les boutons « Demander une expertise » mènent à `/contact/#formulaire`.
 | `src/layouts/Base.astro` | Head SEO (title, description, canonical, Open Graph, JSON-LD), menu, scripts |
 | `src/components/` | `Photo`, `Cta`, `TextLink`, `TallyForm`, `Faq`, `Header`, `Footer` |
 | `src/styles/global.css` | Jetons de design et de mouvement, composants |
-| `src/pages/` | Accueil, Le Réseau, Expertises, Estimation, Les maisons, Contact, Mentions légales, 404 |
+| `src/pages/` | Accueil, Le Réseau, Expertises, Estimation, Contact, Mentions légales, 404 |
 | `photos.manifest.json` + `scripts/fetch-photos.mjs` | Source et traitement des photographies (`npm run photos`) |
 
 ## Photographies
